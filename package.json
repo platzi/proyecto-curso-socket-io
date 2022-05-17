@@ -1,0 +1,19 @@
+{
+  "name": "webchat-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto del Curso de socket.io",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "author": "RetaxMaster",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
