@@ -5,15 +5,17 @@ const allMessages = document.querySelector("#all-messages");
 
 send.addEventListener("click", () => {
 
-    const message = document.querySelector("#message").value;
+    const message = document.querySelector("#message");
 
-    socket.emit("message", message);
+    socket.emit("message", message.value);
+
+    message.value = "";
 
 });
 
 socket.on("message", ({user, message}) => {
 
-    const msg = document.createRange().createContextualFragment(`
+    const msg = document.createRange().createContextualFragment(/*html*/`
     <div class="message">
                 
         <div class="image-container">

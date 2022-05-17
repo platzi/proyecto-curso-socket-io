@@ -5,14 +5,16 @@ module.exports = httpServer => {
 
     io.on("connection", socket => {
 
-       socket.on("message", message => {
+        const cookie = socket.handshake.headers.cookie;
+        const user = cookie.split("=").pop();
 
-        io.emit("message", {
-            user: "Retaxito",
-            message
-        });
+        socket.on("message", message => {
 
-       })
+            io.emit("message", {
+                user, message
+            });
+
+        })
 
     });
 
